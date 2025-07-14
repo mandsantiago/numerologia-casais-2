@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -666,6 +667,196 @@
             opacity: 0.05;
             z-index: -1;
         }
+
+        /* ===== ESTILOS PARA BANNER - NUMEROLOGIA DO CASAL ===== */
+        .numerologia-banner-section {
+            background: linear-gradient(135deg, var(--light) 0%, #f0ede6 100%);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .numerologia-banner-section::before {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            color: var(--gold);
+        }
+
+        .numerologia-banner-section::after {
+            content: "✨";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            color: var(--gold);
+        }
+
+        .numerologia-banner-title {
+            color: var(--primary);
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .numerologia-banner-title::before,
+        .numerologia-banner-title::after {
+            content: "🔥";
+            font-size: 20px;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .numerologia-banner-image-container {
+            background: linear-gradient(135deg, var(--secondary) 0%, #4a9 100%);
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .numerologia-banner-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .numerologia-banner-placeholder::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .numerologia-banner-placeholder:hover::before {
+            left: 100%;
+        }
+
+        .numerologia-banner-placeholder:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .numerologia-banner-placeholder-content {
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .numerologia-banner-placeholder-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .numerologia-banner-placeholder-subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .numerologia-banner-placeholder-cta {
+            font-size: 14px;
+            opacity: 0.8;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .numerologia-banner-placeholder:hover .numerologia-banner-placeholder-cta {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+        }
+
+        .numerologia-banner-description {
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Responsividade do banner */
+        @media (max-width: 768px) {
+            .numerologia-banner-section {
+                margin: 20px 0;
+                padding: 20px;
+            }
+
+            .numerologia-banner-title {
+                font-size: 20px;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .numerologia-banner-placeholder {
+                height: 220px;
+            }
+
+            .numerologia-banner-placeholder-title {
+                font-size: 20px;
+            }
+
+            .numerologia-banner-placeholder-subtitle {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .numerologia-banner-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .numerologia-banner-title {
+                font-size: 18px;
+            }
+
+            .numerologia-banner-placeholder {
+                height: 180px;
+            }
+
+            .numerologia-banner-placeholder-title {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -720,6 +911,29 @@
                 <li><div class="number">4</div> Objetivos comuns que podem unir o casal</li>
                 <li><div class="number">5</div> Caminhos para o crescimento mútuo e felicidade</li>
             </ul>
+            
+            <!-- ===== BANNER SECTION - INSERIDO AQUI ===== -->
+            <div class="numerologia-banner-section">
+                <div class="numerologia-banner-title">
+                    Desperte a Magia do Seu Relacionamento
+                </div>
+                
+                <div class="numerologia-banner-image-container">
+                    <!-- Placeholder para banner - substitua pelo seu conteúdo -->
+                    <div class="numerologia-banner-placeholder" onclick="abrirLinkProduto(https://s.shopee.com.br/801gZpYwUb)">
+                        <div class="numerologia-banner-placeholder-content">
+                            <div class="numerologia-banner-placeholder-title">✨ Produtos Especiais ✨</div>
+                            <div class="numerologia-banner-placeholder-subtitle">Para Fortalecer Seu Amor</div>
+                            <div class="numerologia-banner-placeholder-cta">Clique para descobrir</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="numerologia-banner-description">
+                    * Clique na imagem para conhecer produtos especiais para casais
+                </div>
+            </div>
+            <!-- ===== FIM DO BANNER SECTION ===== -->
             
             <div style="text-align: center; margin: 2.5rem 0;">
                 <button class="btn btn-block" onclick="showSection('calculator')">
@@ -1039,6 +1253,22 @@
             
             // Scroll to top
             window.scrollTo(0, 0);
+        }
+
+        // Função para o banner
+        function abrirLinkProduto() {
+            // SUBSTITUA ESTE LINK PELO SEU LINK DE AFILIADO/PRODUTO
+            const linkProduto = 'https://exemplo.com/produto-para-casais';
+            
+            // Opcional: rastrear clique para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', { 
+                    'event_category': 'banner', 
+                    'event_label': 'produto_casais' 
+                });
+            }
+            
+            window.open(linkProduto, '_blank');
         }
         
         // Form submission
