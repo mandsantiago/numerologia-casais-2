@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -347,6 +346,18 @@
         .btn-reset:hover {
             background: #e0e0e0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para o novo botão do site data-nascimento */
+        .btn-data-nascimento {
+            background: linear-gradient(to right, var(--secondary), #4a9);
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .btn-data-nascimento:hover {
+            background: linear-gradient(to right, #4a9, var(--secondary));
+            box-shadow: 0 5px 15px rgba(91, 192, 190, 0.3);
         }
         
         .results {
@@ -901,6 +912,27 @@
                 </div>
             </div>
             
+            <!-- ===== BANNER E BOTÃO MOVIDOS PARA CIMA ===== -->
+            <div class="numerologia-banner-section">
+                <div class="numerologia-banner-title">
+                    Que tal um presente diferente para o seu amor?
+                </div>
+                
+                <div class="numerologia-banner-image-container">
+                 <img src="https://raw.githubusercontent.com/mandsantiago/numerologia-casais-2/main/quadro_casal.png" 
+                 alt="Quadro para casais" 
+                 style="width: 300px; height: 250px; object-fit: cover; border-radius: 10px; cursor: pointer;" 
+                 onclick="abrirLinkProduto()">
+               </div>
+            </div>
+            
+            <div style="text-align: center; margin: 2.5rem 0;">
+                <button class="btn btn-block" onclick="showSection('calculator')">
+                    <i class="fas fa-calculator"></i> Calcular Compatibilidade do Meu Casal
+                </button>
+            </div>
+            <!-- ===== FIM DA SEÇÃO MOVIDA ===== -->
+            
             <h2 style="margin-top: 2rem;"><i class="fas fa-heart"></i> Numerologia para Casais</h2>
             <p>A análise numerológica para casais é uma ferramenta poderosa para entender a dinâmica de um relacionamento. Ao calcular e comparar os números pessoais de cada parceiro, podemos identificar:</p>
             
@@ -912,26 +944,13 @@
                 <li><div class="number">5</div> Caminhos para o crescimento mútuo e felicidade</li>
             </ul>
             
-            <!-- ===== BANNER SECTION - INSERIDO AQUI ===== -->
-            <div class="numerologia-banner-section">
-                <div class="numerologia-banner-title">
-                    Que tal um presente diferente para o seu amor?
-                </div>
-                
-                <div class="numerologia-banner-image-container">
-                 <img src="https://raw.githubusercontent.com/mandsantiago/numerologia-casais-2/main/quadro_casal.png" 
-                 alt="Quadro para casais" 
-                 style="width: 300px; height: 250px; object-fit: cover; border-radius: 10px; cursor: pointer;" 
-                 onclick="abrirLinkProduto( )">
-               </div>
-            </div>
-            <!-- ===== FIM DO BANNER SECTION ===== -->
-            
+            <!-- ===== NOVO BOTÃO PARA SITE DATA-NASCIMENTO ===== -->
             <div style="text-align: center; margin: 2.5rem 0;">
-                <button class="btn btn-block" onclick="showSection('calculator')">
-                    <i class="fas fa-calculator"></i> Calcular Compatibilidade do Meu Casal
+                <button class="btn btn-block btn-data-nascimento" onclick="abrirSiteDataNascimento()">
+                    <i class="fas fa-calendar-alt"></i> Descubra Mais Sobre Sua Data de Nascimento
                 </button>
             </div>
+            <!-- ===== FIM DO NOVO BOTÃO ===== -->
         </section>
         
         <!-- Calculator Section -->
@@ -1261,6 +1280,22 @@
             }
             
             window.open(linkProduto, '_blank');
+        }
+
+        // Nova função para o site data-nascimento
+        function abrirSiteDataNascimento() {
+            // Link para o site data-nascimento
+            const linkDataNascimento = 'https://site-data-nascimento.vercel.app/';
+            
+            // Opcional: rastrear clique para analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', { 
+                    'event_category': 'botao_data_nascimento', 
+                    'event_label': 'site_data_nascimento' 
+                });
+            }
+            
+            window.open(linkDataNascimento, '_blank');
         }
         
         // Form submission
