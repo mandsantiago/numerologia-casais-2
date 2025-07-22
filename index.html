@@ -735,6 +735,7 @@
             100% { opacity: 1; transform: scale(1.1); }
         }
 
+        /* ===== CSS RESPONSIVO CORRIGIDO PARA O BANNER ===== */
         .numerologia-banner-image-container {
             background: linear-gradient(135deg, var(--secondary) 0%, #4a9 100%);
             border: 3px solid var(--primary);
@@ -743,6 +744,22 @@
             margin: 20px 0;
             position: relative;
             overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            box-sizing: border-box;
+        }
+
+        /* Sobrescrever estilos inline e tornar responsivo */
+        .numerologia-banner-image-container img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100%;
+            object-fit: contain !important;
+            border-radius: 10px;
+            cursor: pointer;
+            display: block;
+            box-sizing: border-box;
         }
 
         .numerologia-banner-placeholder {
@@ -824,17 +841,34 @@
             line-height: 1.4;
         }
 
-        /* Responsividade do banner */
+        /* Media queries para responsividade completa */
         @media (max-width: 768px) {
             .numerologia-banner-section {
                 margin: 20px 0;
                 padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .numerologia-banner-title {
                 font-size: 20px;
                 flex-direction: column;
                 gap: 5px;
+            }
+
+            .numerologia-banner-image-container {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .numerologia-banner-image-container img {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100%;
+                object-fit: contain !important;
+                border-radius: 8px;
             }
 
             .numerologia-banner-placeholder {
@@ -860,6 +894,15 @@
                 font-size: 18px;
             }
 
+            .numerologia-banner-image-container {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            
+            .numerologia-banner-image-container img {
+                border-radius: 6px;
+            }
+
             .numerologia-banner-placeholder {
                 height: 180px;
             }
@@ -867,6 +910,11 @@
             .numerologia-banner-placeholder-title {
                 font-size: 18px;
             }
+        }
+
+        /* Garantir que o banner não quebre o layout */
+        .numerologia-banner-section * {
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -1397,3 +1445,4 @@
     </script>
 </body>
 </html>
+
